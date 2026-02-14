@@ -1,11 +1,6 @@
 :root {
   --bg: #f0f4f8;
   --accent: #1a252f;
-  --text: #000000;
-  --white: #ffffff;
-  --muted: #4a5560;
-  --border: #ced8e0;
-  --error: #b3261e;
 }
 
 * {
@@ -15,9 +10,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: radial-gradient(circle at 10% 10%, #ffffff 0%, var(--bg) 55%);
-  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(26, 37, 47, 0.12) 0%, transparent 42%),
+    radial-gradient(circle at 88% 75%, rgba(26, 37, 47, 0.1) 0%, transparent 40%),
+    var(--bg);
+  color: var(--accent);
 }
 
 .page {
@@ -29,11 +27,12 @@ body {
 
 .card {
   width: min(100%, 520px);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 12px 35px rgba(26, 37, 47, 0.08);
+  background: rgba(26, 37, 47, 0.06);
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 16px 40px rgba(26, 37, 47, 0.18);
+  backdrop-filter: blur(1px);
 }
 
 .eyebrow {
@@ -53,7 +52,7 @@ h1 {
 
 .subtitle {
   margin: 0 0 22px;
-  color: var(--muted);
+  color: rgba(26, 37, 47, 0.86);
   line-height: 1.45;
 }
 
@@ -72,34 +71,35 @@ h1 {
 
 input[type="email"] {
   width: 100%;
-  border: 1px solid var(--border);
+  border: 2px solid var(--accent);
   border-radius: 10px;
   padding: 14px 12px;
   font-size: 1rem;
-  color: var(--text);
-  background: var(--white);
+  color: var(--accent);
+  background: rgba(240, 244, 248, 0.88);
 }
 
 input[type="email"]:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(26, 37, 47, 0.35);
+  outline: 3px solid rgba(26, 37, 47, 0.5);
   outline-offset: 2px;
 }
 
 button {
-  border: 0;
+  border: 2px solid var(--accent);
   border-radius: 10px;
   background: var(--accent);
-  color: var(--white);
+  color: var(--bg);
   font-weight: 700;
   font-size: 1rem;
   padding: 14px 16px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 button:hover {
-  opacity: 0.92;
+  transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 button:disabled {
@@ -110,8 +110,9 @@ button:disabled {
 .status {
   min-height: 1.2em;
   margin: 12px 0 0;
-  color: var(--error);
+  color: var(--accent);
   font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .success {
@@ -119,6 +120,10 @@ button:disabled {
   color: var(--accent);
   font-size: 1.05rem;
   font-weight: 600;
+  background: rgba(26, 37, 47, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 14px;
 }
 
 @media (min-width: 640px) {
