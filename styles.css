@@ -122,6 +122,22 @@ h1 {
   gap: 12px;
 }
 
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.captcha-wrap {
+  margin-top: 14px;
+}
+
+.cf-turnstile {
+  min-height: 65px;
+}
+
 input[type="email"] {
   width: 100%;
   border: 2px solid var(--accent);

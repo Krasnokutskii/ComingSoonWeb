@@ -22,9 +22,34 @@
         <form
           id="waitlist-form"
           class="waitlist-form"
-          action="https://formsubmit.co/df4349434c3d06ecd7038ba1c351c731"
           method="POST"
         >
+          <fieldset class="platform-group">
+            <legend>Phone</legend>
+            <div class="platform-options">
+              <label class="platform-option" for="platform-iphone">
+                <input
+                  id="platform-iphone"
+                  type="radio"
+                  name="platform"
+                  value="iPhone"
+                  required
+                />
+                <span>iPhone</span>
+              </label>
+              <label class="platform-option" for="platform-android">
+                <input
+                  id="platform-android"
+                  type="radio"
+                  name="platform"
+                  value="Android"
+                  required
+                />
+                <span>Android</span>
+              </label>
+            </div>
+          </fieldset>
+
           <label for="email">Email</label>
           <div class="input-row">
             <input
@@ -38,9 +63,25 @@
             <button id="submit-btn" type="submit">Notify me</button>
           </div>
 
-          <input type="hidden" name="_subject" value="New ComingSoon signup" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+          <label class="hp-field" for="website"
+            >Leave this field empty
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </label>
+
+          <div class="captcha-wrap">
+            <div
+              id="turnstile-container"
+              class="cf-turnstile"
+              data-sitekey="__TURNSTILE_SITE_KEY__"
+              data-theme="light"
+            ></div>
+          </div>
 
           <p id="form-status" class="status" aria-live="polite"></p>
         </form>
@@ -51,6 +92,11 @@
       </section>
     </main>
 
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
